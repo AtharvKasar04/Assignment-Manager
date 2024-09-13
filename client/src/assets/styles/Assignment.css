@@ -1,0 +1,420 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.assignment-body{
+    min-height: 100vh;
+    background-color: #222831;
+    padding: 10px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* width: fit-content; */
+    /* border: 2px solid red; */
+    /* margin: 8px 0px; */
+    padding: 5px;
+}
+
+.priority-date{
+    display: flex;
+}
+
+.create-assignment-form{
+    /* border: 2px solid green; */
+    padding: 15px 30px;
+    width: 50%;
+    background-color: white;
+    border-radius: 12px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.create-assignment-form > h3{
+    font-size: 1.5rem;
+}
+
+.create-assignment-input{
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: 2px solid black;
+}
+
+#assignmentPriority{
+    /* width: 100%; */
+    width: fit-content;
+    padding: 10px;
+    border-radius: 6px;
+    outline: none;
+    border: 2px solid black;
+}
+
+#assignmentDate{
+    width: 90%;
+    padding: 10px;
+    border-radius: 6px;
+    /* border: none; */
+    outline: none;
+}
+
+#assignment-submit-btn{
+    padding: 10px 20px;
+    width: 50%;
+    margin: 10px 0px;
+    background-color: lightgreen;
+    font-weight: bold;
+    border-radius: 4px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#assignmentTitle{
+    width: 90%;
+}
+
+#assignmentSubject{
+    width: 90%;
+}
+
+.title-subject{
+    display: flex;
+}
+
+.sub-grouped{
+    width: fit-content;
+}
+
+/* Bottom section */
+
+.right-section{
+    /* border: 2px solid red; */
+    position: relative;
+    margin-top: 20px;
+    /* text-align: center; */
+    padding: 10px;
+}
+
+.your-assignments-section{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid white; */
+    padding: 5px;
+}
+
+.your-assignments-section > h2{
+    color: white;
+    letter-spacing: 1px;
+}
+
+.straightLine{
+    height: 2px;
+    border-radius: 10px;
+    width: 40%;
+    background-color: lightgreen;
+    margin: 10px;
+}
+
+/* Assignment Styling */
+
+.assignment{
+    /* background-color: lightgreen; */
+    background-color: rgb(247, 247, 247);
+    width: 60%;
+    border-radius: 12px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    padding: 10px 20px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0px;
+}
+
+.user-assignment-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.user-assignment-subject{
+    font-weight: bold;
+    color: gray;
+}
+
+.user-assignment-priority{
+    font-weight: bold;
+    background-color: rgb(41, 98, 255);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.user-assignment-date{
+    font-weight: bold;
+}
+
+/* State buttons styling */
+
+.states{
+    /* border: 2px solid blue; */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.state-management-button{
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    margin: 0px 2px;
+    border-radius: 4px;
+}
+
+/* #pending-state-btn{
+    background-color: rgb(255, 85, 85) !important;
+    border: 2px solid black;
+    transition: 0.2s ease-out;
+} */
+#pending-state-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* #doing-state-btn{
+    background-color: rgb(255, 255, 113);
+    background: none;
+    border: 2px solid black;
+    transition: 0.2s ease-out;
+} */
+#doing-state-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* #done-state-btn{
+    background-color: green;
+    background: none;
+    border: 2px solid black;
+    transition: 0.2s ease-out;
+} */
+#done-state-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* State indicator div */
+
+.stateIndicator{
+    width: 80px;
+    height: 300px;
+    background-color: rgb(254, 81, 81);
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%) rotate(45deg) scale(2);
+    border: 5px solid #222831;
+    /* z-index: -1; */
+}
+
+.stateIndicatorDone{
+    width: 80px;
+    height: 300px;
+    background-color: lightgreen;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%) rotate(45deg) scale(2);
+    border: 5px solid #222831;
+}
+
+.stateIndicatorDoing{
+    width: 80px;
+    height: 300px;
+    background-color: rgb(255, 255, 146);
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%) rotate(45deg) scale(2);
+    border: 5px solid #222831;
+}
+
+/* not auth */
+
+.notAuth{
+    background-color: darkslategray;
+    /* border: 2px solid black; */
+    width: 100%;
+    padding: 10px 20px;
+    /* border-radius: 8px; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* state btns */
+
+.state-management-button.active{
+    background-color: darkcyan;
+    border: 2px solid black;
+    color: white;
+    font-weight: bold;
+}
+
+.stateIndicator.done{
+    background-color: rgb(100, 255, 100);
+}
+.stateIndicator.doing{
+    background-color: rgb(253, 174, 27);
+}
+.stateIndicator.pending{
+    background-color: rgb(254, 81, 81);
+}
+
+/* no assignments */
+
+#noAssignments{
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: black;
+    padding: 12px 36px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+}
+
+#logoutBtn{
+    background-color: rgb(255, 85, 85);
+    padding: 8px 16px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 8px;
+    color: black;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+}
+#logoutBtn:hover{
+    box-shadow: 0px 0px 8px red;
+}
+
+#deleteBtn{
+    /* background-color: rgb(255, 65, 65); */
+    outline: none;
+    border: 2px solid black;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: 0.2s;
+    cursor: pointer;
+    margin-top: 8px;
+}
+#deleteBtn:hover{
+    box-shadow: 2px 2px 1px black;
+    background-color: rgb(249, 120, 120);
+}
+
+
+.priority-high {
+    background-color: red;
+    border: 2px solid black;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin: 5px 0px;
+}
+.priority-medium {
+    background-color: orange;
+    border: 2px solid black;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin: 5px 0px;
+}
+.priority-low {
+    background-color: green;
+    border: 2px solid black;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin: 5px 0px;
+}
+.priority-none {
+    margin: 5px 0px;
+    background-color: black;
+    border: 2px solid black;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: white;
+}
+
+/* responsiveness */
+
+@media (max-width: 769px) {
+    .create-assignment-form{
+        text-align: center;
+        width: 90%;
+        /* position: absolute; */
+    }
+    .title-subject{
+        flex-direction: column;
+    }
+    .priority-date{
+        flex-direction: column;
+        /* border: 2px solid; */
+        align-items: center;
+    }
+    #assignment-submit-btn{
+        width: 80%;
+    }
+    .form-group label{
+        /* position: relative; */
+        left: 0px;
+    }
+    .form-group{
+        text-align: center;
+        align-items: center;
+    }
+
+    .assignment{
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: start;
+        /* overflow: visible; */
+        height: 210px;
+    }
+    .stateIndicator{
+        /* display: none; */
+        width: 15px;
+        height: 100%;
+        border: none;
+        top: 0;
+        left: 0;
+        transform: rotate(0);
+    }
+    .user-assignment-title{
+        font-size: 1rem;
+    }
+    .user-assignment-subject{
+        font-size: 0.8rem;
+    }
+    .states{
+        /* height: fit-content; */
+        position: absolute;
+        top: auto;
+        bottom: 0px !important;
+        left: 10px;
+        /* border: 2px solid; */
+        margin: 10px 0px;
+    }
+}

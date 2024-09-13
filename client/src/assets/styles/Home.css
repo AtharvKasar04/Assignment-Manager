@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-body{
+    background-color: rgb(1, 1, 19);
+    min-height: 100vh;
+}
+
+.container{
+    background-color: rgb(237, 237, 251);
+    padding: 30px 40px;
+    width: fit-content;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 2px solid black;
+    box-shadow: 3px 3px 0px gray;
+}
+
+.infoPara{
+    color: lightslategray;
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+.button-links{
+    font-weight: bold;
+    background-color: lightgreen;
+    margin: 4px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0px green;
+    transition: 0.3s ease-in-out;
+    border: 2px solid black;
+    text-decoration: none;
+}
+
+.button-link-login{
+    background-color: transparent !important;
+}
+
+.button-links:hover{
+    background-color: rgb(117, 219, 117);
+    box-shadow: 2px 2px 0px green;
+}
+
+.madeBy{
+    color: lightslategrey;
+    font-weight: bold;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#name{
+    color: lightgreen;
+}
