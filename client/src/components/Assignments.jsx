@@ -34,8 +34,10 @@ function Assignments() {
 
             if (response.status === 201) {
                 // alert("Assignment created successfully!");
-                setAssignments([...assignments, response.data]);
-                setNewAssignment({ title: '', subject: '', priority: '', date: '' });
+                // setAssignments([...assignments, response.data]);
+                setAssignments((prevAssignments) => [...prevAssignments, response.data]);
+
+                setNewAssignment({ title: '', subject: '', priority: 'high', date: '' });
 
                 const Toast = Swal.mixin({
                     toast: true,
@@ -119,7 +121,7 @@ function Assignments() {
                         let assignmentResponse = await axios.get(`https://assignment-manager-1.onrender.com/assignment/${userId}`, { withCredentials: true });
                         // console.log(assignmentResponse);
 
-                        if (assignmentResponse.status === 200) {
+                        if (assignmentResponse.status === 200 && Array.isArray(assignmentResponse.data)) {
                             setAssignments(assignmentResponse.data);
                         } else {
                             setAssignments([])
