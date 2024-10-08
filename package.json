@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon server/app.js",
+    "dev": "node server/app.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "nodemon server/app.js"
+    "start": "node server/app.js"
   },
   "keywords": [],
   "author": "",
