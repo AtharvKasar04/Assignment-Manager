@@ -5,6 +5,3 @@ server/node_modules
 # Environment variables
 server/.env
 
-# Build output
-client/dist/
-server/dist/

@@ -6,6 +6,8 @@ const userRouter = require("./routes/userRouter");
 const assignmentRouter = require("./routes/assignmentRouter");
 const index = require("./routes/index");
 const isLoggedIn = require("./middlewares/isLoggedIn");
+const path = require("path");
+const _dirname = path.resolve();
 
 require("dotenv").config();
 
@@ -18,6 +20,12 @@ app.use(cors({
     origin: 'http://localhost:5173',
     credentials: true
 }));
+
+app.use(express.static(path.join(_dirname, "/client/dist")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(_dirname, "client", "dist", "index.html"));
+})
 
 app.use("/", index);
 app.use("/user", userRouter);
