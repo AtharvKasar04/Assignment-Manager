@@ -22,7 +22,7 @@ function Assignments() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:5000/assignment/create-assignment',
+            const response = await axios.post('https://assignment-manager-1.onrender.com/assignment/create-assignment',
                 {
                     title: newAssignment.title,
                     subject: newAssignment.subject,
@@ -62,7 +62,7 @@ function Assignments() {
     }
 
     const userLogout = async () => {
-        let response = await axios.post("http://localhost:5000/user/logout", {}, { withCredentials: true });
+        let response = await axios.post("https://assignment-manager-1.onrender.com/user/logout", {}, { withCredentials: true });
 
         if (response.status === 200) {
             alert("Logging You Out!");
@@ -75,7 +75,7 @@ function Assignments() {
 
     const updateAssignmentState = async (assignmentId, newState) => {
         try {
-            const response = await axios.put(`http://localhost:5000/assignment/update-state/${assignmentId}`, { state: newState }, { withCredentials: true });
+            const response = await axios.put(`https://assignment-manager-1.onrender.com/assignment/update-state/${assignmentId}`, { state: newState }, { withCredentials: true });
 
             if (response.status === 200) {
                 setAssignments(prevAssignments => prevAssignments.map(assignment => assignment._id === assignmentId ? { ...assignment, state: newState } : assignment));
@@ -92,7 +92,7 @@ function Assignments() {
         const confirmDelete = confirm("Are you sure you want to delete this assignment?");
         if (confirmDelete) {
             try {
-                const response = await axios.delete(`http://localhost:5000/assignment/${assignmentId}`, { withCredentials: true });
+                const response = await axios.delete(`https://assignment-manager-1.onrender.com/assignment/${assignmentId}`, { withCredentials: true });
                 if (response.status === 200) {
                     setAssignments(assignments.filter(assignment => assignment._id !== assignmentId));
                     // alert("Assignment deleted successfully");
@@ -108,7 +108,7 @@ function Assignments() {
     useEffect(() => {
         const verifyUserAuth = async () => {
             try {
-                let response = await axios.get('http://localhost:5000/user/verify-user-auth', { withCredentials: true });
+                let response = await axios.get('https://assignment-manager-1.onrender.com/user/verify-user-auth', { withCredentials: true });
 
                 if (response.status === 200) {
                     setAuthenticated(true);
@@ -116,7 +116,7 @@ function Assignments() {
                     const userId = response.data.userId;
 
                     try {
-                        let assignmentResponse = await axios.get(`http://localhost:5000/assignment/${userId}`, { withCredentials: true });
+                        let assignmentResponse = await axios.get(`https://assignment-manager-1.onrender.com/assignment/${userId}`, { withCredentials: true });
                         // console.log(assignmentResponse);
 
                         if (assignmentResponse.status === 200) {

@@ -15,7 +15,7 @@ function Register() {
     e.preventDefault();
 
     try {
-      let response = await axios.post('http://localhost:5000/user/register', { username, email, password }, { withCredentials: true });
+      let response = await axios.post('https://assignment-manager-1.onrender.com/user/register', { username, email, password }, { withCredentials: true });
 
       if (response.status === 201) {
         // alert("Registered successfully! You can now Log in.");

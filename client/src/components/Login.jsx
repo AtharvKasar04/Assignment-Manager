@@ -13,7 +13,7 @@ function Login() {
         e.preventDefault();
 
         try {
-            let response = await axios.post("http://localhost:5000/user/login", { email, password }, { withCredentials: true });
+            let response = await axios.post("https://assignment-manager-1.onrender.com/user/login", { email, password }, { withCredentials: true });
 
             if (response.status === 200) {
                 navigate("/user-assignments");
